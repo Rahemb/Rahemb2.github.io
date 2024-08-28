@@ -5,6 +5,14 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  display: flex; /* Flexbox for body */
+  flex-direction: column; /* Vertikal retning */
+  min-height: 100vh; /* Minimum høyde som tar hele vinduet */
+}
+
+/* Wrapper for å holde innhold og footer på plass */
+.wrapper {
+  flex: 1; /* Tar opp all tilgjengelig plass mellom header og footer */
 }
 
 /* Header styling */
@@ -32,7 +40,30 @@ h1 {
   font-size: 2em;
   margin: 10px 0;
 }
+/* Header styling */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center; /* Endre fra center til left for å justere innholdet til venstre */
+}
 
+.header-content {
+  display: flex; /* Bruk flexbox for å plassere logo og overskrift ved siden av hverandre */
+  align-items: center; /* Sentraliserer vertikalt */
+}
+
+.logo {
+  width: 200px; /* Angi ønsket bredde på logoen */
+  height: auto; /* Holder på proporsjoner */
+  margin-right: 1100px; /* Litt mellomrom mellom logoen og overskriften */
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0; /* Fjern margin for bedre justering */
+  color: #fff; /* Tekstfarge for overskriften */
+}
 /* Meny styling */
 nav ul {
   list-style-type: none;
@@ -57,6 +88,7 @@ nav ul li a:hover {
 /* Main content styling */
 main {
   padding: 20px;
+  flex: 1; /* Tar opp all tilgjengelig plass mellom header og footer */
 }
 
 section {
@@ -66,50 +98,6 @@ section {
 h2 {
   font-size: 1.5em;
   color: #333;
-}
-
-/* Footer styling */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-
-/* Styling for header and navigation */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
 }
 
 /* Table styling */
@@ -150,23 +138,12 @@ table td {
   color: #333;
 }
 
-/* Main content styling */
-main {
-  padding: 20px;
-}
-
-h2 {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 20px;
-}
-
 /* Footer styling */
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  margin-top: 20px;
+  width: 100%; /* Full bredde */
+  margin-top: auto; /* Skyver footer til bunnen */
 }
-
